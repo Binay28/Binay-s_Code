@@ -1,0 +1,43 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the appendAndDelete function below.
+def appendAndDelete(s, t, k):
+    sls=s.split()
+    tls=t.split()
+    count=0
+    #while(k):
+    if(len(sls)==len(tls)):
+        for i in range(len(sls)):
+            if(sls[i]!=tls[i]):count=len(sls)-i     
+        if(k>=2*count): return("Yes")
+        else:return("NO")
+    elif(len(sls)>len(tls)):
+        for i in range(len(tls)):
+            if(sls[i]!=tls[i]):count=len(tls)-i;break
+        if(k==(2*count)+len(sls)-len(tls)):return("Yes")
+        else:return("No")
+    elif(len(tls)>len(sls)):
+        for i in range(len(sls)):
+            if(sls[i]!=tls[i]):count=len(sls)-i;break
+        if(k==(2*count)+len(sls)-len(tls)):return("Yes")
+        else:return("No")
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    t = input()
+
+    k = int(input())
+
+    result = appendAndDelete(s, t, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()

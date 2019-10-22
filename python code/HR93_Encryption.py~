@@ -1,0 +1,29 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the encryption function below.
+def encryption(s):
+    S="".join(s.split())
+    ls=list()
+    row=math.floor(math.sqrt(len(S)))
+    col=math.ceil(math.sqrt(len(S)))
+    for i in range(row):
+        ls.append(S[i*col:col*(i+1)])
+    #for i in range(col):
+    return(" ".join("".join(j[i] for j in ls) for i in range(col)))
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = encryption(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+#this code is failing due to index error and col number error for some test cases 

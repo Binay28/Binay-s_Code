@@ -1,0 +1,34 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int a,b,j;
+    cin>>a>>b;
+    string hrml[a][200],query[b][200];
+    for(int i=0;i<a;i++) 
+      cin.get(hrml[i]);
+     for(int i=0;i<a;i++) 
+       puts(hrml[i]);
+    for(int i=0;i<b;i++)
+      gets(query[i]);
+     for(int i=0;i<b;i++)
+       puts(query[i]);
+    /* for(int i=0;i<b;i++)
+    {   j=0;
+        while(query[i][j]!='\0')
+        {
+            if(query[i][j]=='.')
+
+        }
+    }
+    return 0;
+    }*/
+}
+    

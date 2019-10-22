@@ -1,0 +1,16 @@
+if __name__ == '__main__':
+    ls=list()
+    names=list()
+    #dic=dict()
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        ls.append([name,score])
+        #dic[score]=dic.get(score,ls1())
+    ls.sort(key=lambda i:i[1])
+    for i in range(len(ls)):
+        if(i>0):
+            if(ls[i][1]>=ls[i+1][1] and ls[i][1]>ls[i-1][1]):
+                names.append(ls[i][0])
+    names.sort()
+    print(names)

@@ -1,0 +1,22 @@
+import urllib2
+
+# Derive from Request class and override get_method to allow a HEAD request.
+class HeadRequest(urllib2.Request):
+    def get_method(self):
+        return "HEAD"
+
+myurl = "http://www.pythonlearn.com/code/intro-short.txt"
+request = HeadRequest(myurl)
+
+try:
+    response = urllib2.urlopen(request)
+    response_headers = response.info()
+
+
+except :
+    urllib2.HTTPError, e
+    # Prints the HTTP Status code of the response but only if there was a 
+    # problem.
+    print ("Error code: %s" % e.code)
+#HTTP request and response
+print (response_headers)
