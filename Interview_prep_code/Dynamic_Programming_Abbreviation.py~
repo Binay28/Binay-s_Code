@@ -1,0 +1,27 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the abbreviation function below.
+def abbreviation(a, b):
+    if(set(a.lower())==set(b.lower())):
+        return("YES")
+    else: return("NO")
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        a = input()
+
+        b = input()
+
+        result = abbreviation(a, b)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
+#the if condition is wrong therefore code is failing all the sample test cases. 

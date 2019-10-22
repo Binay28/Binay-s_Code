@@ -1,0 +1,29 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the candies function below.
+def candies(n, arr):
+    (count,last)=(0,0)
+    for i in range(n-1):
+        if(arr[i]<arr[i+1]):
+            
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = []
+
+    for _ in range(n):
+        arr_item = int(input())
+        arr.append(arr_item)
+
+    result = candies(n, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+#this code is still incomplete need to find the minimum no. of candies under condition that higher rating student gets higher number of candies than the adjacent one.
